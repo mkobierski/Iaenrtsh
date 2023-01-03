@@ -15,8 +15,8 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AD07>{ [comma, less, comma, less, 7, 7, 7, 7] };
     key <AD08>{ [g, G, g, G, 8, 8, 8, 8] };
-    key <AD09>{ [d, D, d, D, 9, 9, 9, 9] };
-    key <AD10>{ [w, W] };
+    key <AD09>{ [d, D, semicolon, colon, 9, 9, 9, 9] };
+    key <AD10>{ [w, W, equal, plus] };
 
 
     key.type[Group1]="FOUR_LEVEL";
@@ -41,7 +41,7 @@ xkb_symbols "iaenrtsh" {
     key <AC07>{ [h, H, BackSpace, BackSpace, 4, 4, 4, 4 ] };
     key <AC08>{ [s, S, parenleft, braceleft, 5, 5, 5, 5 ] };
     key <AC09>{ [t, T, parenright, braceright, 6, 6, 6, 6 ] };
-    key <AC10>{ [r, R, slash, question, 0, 0, 0, 0] };
+    key <AC10>{ [r, R, question, question, 0, 0, 0, 0] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC11>{ [apostrophe, quotedbl] };
@@ -50,7 +50,7 @@ xkb_symbols "iaenrtsh" {
     key <AB02>{ [z, Z] };
     key <AB03>{ [v, V, Tab,	ISO_Left_Tab] };
     key <AB04>{ [p, P, Delete] };
-    key <AB05>{ [semicolon, colon] };
+    key <AB05>{ [colon, semicolon] };
     key <AB06>{ [f, F] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
@@ -59,7 +59,7 @@ xkb_symbols "iaenrtsh" {
     key <AB09>{ [k, K, k, K, 3, 3, 3, 3] };
 
     key.type[Group1]="FOUR_LEVEL";
-    key <AB10>{ [j, J] };
+    key <AB10>{ [j, J, slash, slash] };
 
     include "iaenrtsh(spc_alt)"
     include "level3(lalt_switch)"
