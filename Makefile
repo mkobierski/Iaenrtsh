@@ -23,7 +23,7 @@ backup:
 
 .PHONY: set_layout
 set_layout: build backup
-	setxkbmap -Ibuild/xkb -rules evdev-local -layout "iaenrtsh" -print | xkbcomp -Ibuild/xkb - $$DISPLAY
+	setxkbmap -Ibuild/xkb -rules evdev-local -layout "iaenrtsh" -option -print | xkbcomp -Ibuild/xkb - $$DISPLAY
 
 .PHONY: revert_layout
 revert_layout:
