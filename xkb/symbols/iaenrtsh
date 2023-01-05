@@ -5,35 +5,61 @@ xkb_symbols "iaenrtsh" {
     name[Group1]= "English (Iaenrtsh)";
 
     key.type[Group1]="FOUR_LEVEL";
-    key <AD01>{ [y, Y] };
-    key <AD02>{ [o, O, parenleft, bracketleft] };
-    key <AD03>{ [u, U, parenright, bracketright] };
-    key <AD04>{ [period, greater] };
-    key <AD05>{ [q, Q] };
+    key <AD01>{ type[Group1]="THREE_LEVEL", [y, Y, Escape] };
+
+    // Put Control+w on left-hand in third level
+    key <AD02>{ [o, O, w, W ] };
+
+    // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
+    // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
+    // Note it's not on the 'i' or 's'  because we want to use these numbers in
+    // combination with Control (on Caps Lock key) and some keyboards won't
+    // register both Caps Lock, Qwerty 'a', and left alt simultaneously.
+    //
+    // There's a quirk where in some input fields an 'o' will be sent instead.
+    // Redirecting to NMLK was an attempt to fix that but it doesn't work as
+    // intended.  Specifically the key does not repeat with SetMods (good), but
+    // with redirect it does (bad).
+    //
+    // replace key <NMLK> {
+    //     vmods = NumLock,
+    //     type[Group1] = "ONE_LEVEL",
+    //     symbols[Group1] = [ NoSymbol ],
+    //     actions[Group1] = [ SetMods(modifiers=NumLock) ]
+    // };
+    key <AD03>{
+        vmods = NumLock,
+        type[Group1] = "THREE_LEVEL",
+        symbols[Group1] = [ u, U, NoSymbol ],
+        actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
+    };
+
+    key <AD04>{ [period, greater, r, R] };
+    key <AD05>{ [q, Q, t, T] };
     key <AD06>{ [z, Z] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AD07>{ [comma, less, comma, less, 7, 7, 7, 7] };
     key <AD08>{ [g, G, g, G, 8, 8, 8, 8] };
-    key <AD09>{ [d, D, semicolon, colon, 9, 9, 9, 9] };
+    key <AD09>{ [d, D, question, question, 9, 9, 9, 9] };
     key <AD10>{ [w, W, equal, plus] };
 
-
     key.type[Group1]="FOUR_LEVEL";
-    key <AC01>{ [i, I] };
+    key <AD11>{ [x, X] };
+    replace key <AD12>{ type[Group1]="ONE_LEVEL", [ Control_R ] };
 
-    // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
-    // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
-    // Note it's not on the 'i' because we want to use these numbers in
-    // combination with Control (on Caps Lock key) and some keyboards won't
-    // register both Caps Lock, Qwerty 'a', and left alt simultaneously.
-    key <AC02>{
-        vmods = NumLock,
-        symbols[Group1] = [ a, A, NoSymbol ],
-        actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock) ]
+    // Make Control+d left-hand accessible
+    key <AC01>{ [i, I, d, D] };
+
+    // Make Control+s left-hand accessible
+    replace key <AC02>{ [a, A, s, S ] };
+    key <AC03>{
+        type[Group1] = "THREE_LEVEL",
+        [e, E, NoAction],
+        actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5) ]
     };
-    key <AC03>{ [e, E, Return] };
-    key <AC04>{ [n, N] };
+    // Make Control+f left-hand accessible
+    key <AC04>{ [n, N, f, F] };
     key <AC05>{ [b, B] };
     key <AC06>{ [m, M] };
 
@@ -41,22 +67,22 @@ xkb_symbols "iaenrtsh" {
     key <AC07>{ [h, H, BackSpace, BackSpace, 4, 4, 4, 4 ] };
     key <AC08>{ [s, S, parenleft, braceleft, 5, 5, 5, 5 ] };
     key <AC09>{ [t, T, parenright, braceright, 6, 6, 6, 6 ] };
-    key <AC10>{ [r, R, question, question, 0, 0, 0, 0] };
+    key <AC10>{ [r, R, semicolon, colon, 0, 0, 0, 0] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC11>{ [apostrophe, quotedbl] };
 
     key <AB01>{ [x, X] };
-    key <AB02>{ [z, Z] };
+    key <AB02>{ [z, Z, c, C] };
     key <AB03>{ [v, V, Tab,	ISO_Left_Tab] };
     key <AB04>{ [p, P, Delete] };
     key <AB05>{ [colon, semicolon] };
-    key <AB06>{ [f, F] };
+    key <AB06>{ [f, F, less, less] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AB07>{ [l, L, bracketleft, bracketleft, 1, 1, 1, 1] };
     key <AB08>{ [c, C, bracketright, bracketright, 2, 2, 2, 2] };
-    key <AB09>{ [k, K, k, K, 3, 3, 3, 3] };
+    key <AB09>{ [k, K, greater, greater, 3, 3, 3, 3] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AB10>{ [j, J, slash, slash] };
@@ -70,6 +96,9 @@ xkb_symbols "iaenrtsh" {
 partial modifier_keys
 xkb_symbols "spc_alt" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
-    replace key <RALT> { [ space, space, minus, underscore ], type[Group1] = "FOUR_LEVEL"  };
+    replace key <RALT> {
+        type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
+        [ space, space, minus, underscore, minus, minus, minus, minus]
+    };
     modifier_map Mod1 { <SPCE> };
 };
