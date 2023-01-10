@@ -102,3 +102,98 @@ xkb_symbols "spc_alt" {
     };
     modifier_map Mod1 { <SPCE> };
 };
+
+partial alphanumeric_keys
+xkb_symbols "mirror" {
+    include "us(basic)"
+
+    name[Group1]= "English (Iaenrtsh)";
+
+    key.type[Group1]="FOUR_LEVEL";
+    key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, Escape] };
+
+    // Put Control+w on left-hand in third level
+    key <AD02>{ [d, D, w, W ] };
+
+    // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
+    // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
+    // Note it's not on the 'i' or 's'  because we want to use these numbers in
+    // combination with Control (on Caps Lock key) and some keyboards won't
+    // register both Caps Lock, Qwerty 'a', and left alt simultaneously.
+    //
+    // There's a quirk where in some input fields an 'o' will be sent instead.
+    // Redirecting to NMLK was an attempt to fix that but it doesn't work as
+    // intended.  Specifically the key does not repeat with SetMods (good), but
+    // with redirect it does (bad).
+    //
+    // replace key <NMLK> {
+    //     vmods = NumLock,
+    //     type[Group1] = "ONE_LEVEL",
+    //     symbols[Group1] = [ NoSymbol ],
+    //     actions[Group1] = [ SetMods(modifiers=NumLock) ]
+    // };
+    key <AD03>{
+        vmods = NumLock,
+        type[Group1] = "THREE_LEVEL",
+        symbols[Group1] = [ g, G, NoSymbol ],
+        actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
+    };
+
+    key <AD04>{ [f, F, r, R] };
+    key <AD05>{ [z, Z, t, T] };
+    key <AD06>{ [q, Q] };
+
+    key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key <AD07>{ [p, P, p, P, 7, 7, 7, 7] };
+    key <AD08>{ [u, U, u, U, 8, 8, 8, 8] };
+    key <AD09>{ [o, O, question, question, 9, 9, 9, 9] };
+    key <AD10>{ [y, Y, equal, plus] };
+
+    key.type[Group1]="FOUR_LEVEL";
+ //   key <AD11>{type[Group1]="ONE_LEVEL", [ Control_R ] };
+
+    // Make Control+d left-hand accessible
+    key <AC01>{ [r, R, d, D] };
+
+    // Make Control+s left-hand accessible
+    replace key <AC02>{ [t, T, s, S ] };
+    key <AC03>{
+        type[Group1] = "THREE_LEVEL",
+        [s, S, NoAction],
+        actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5) ]
+    };
+    // Make Control+f left-hand accessible
+    key <AC04>{ [h, H, f, F] };
+    key <AC05>{ [m, M] };
+    key <AC06>{ [comma, less] };
+
+    key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key <AC07>{ [n, N, BackSpace, BackSpace, 4, 4, 4, 4 ] };
+    key <AC08>{ [e, E, parenleft, braceleft, 5, 5, 5, 5 ] };
+    key <AC09>{ [a, A, parenright, braceright, 6, 6, 6, 6 ] };
+    key <AC10>{ [i, I, semicolon, colon, 0, 0, 0, 0] };
+
+    key.type[Group1]="FOUR_LEVEL";
+    key <AC11>{ [slash, question] };
+
+    key <AB01>{ [x, X] };
+    key <AB02>{ [k, K, c, C] };
+    key <AB03>{ [c, C, Tab,	ISO_Left_Tab] };
+    key <AB04>{ [l, L, Delete] };
+    key <AB05>{ [v, V] };
+    key <AB06>{ [comma, less, less, less] };
+
+    key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key <AB07>{ [b, B, bracketleft, bracketleft, 1, 1, 1, 1] };
+    key <AB08>{ [apostrophe, quotedbl, bracketright, bracketright, 2, 2, 2, 2] };
+    key <AB09>{ [semicolon, colon, greater, greater, 3, 3, 3, 3] };
+
+    key.type[Group1]="FOUR_LEVEL";
+    key <AB10>{ [j, J, slash, slash] };
+
+    include "iaenrtsh(spc_alt)"
+    include "level3(lalt_switch)"
+    include "level5(lock)"
+    include "ctrl(swapcaps)"
+};
+
