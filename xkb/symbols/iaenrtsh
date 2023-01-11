@@ -144,7 +144,7 @@ xkb_symbols "mirror" {
     key <AD06>{ [q, Q] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
-    key <AD07>{ [p, P, p, P, 7, 7, 7, 7] };
+    key <AD07>{ [b, B, b, B, 7, 7, 7, 7] };
     key <AD08>{ [u, U, u, U, 8, 8, 8, 8] };
     key <AD09>{ [o, O, question, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, equal, plus] };
@@ -165,7 +165,7 @@ xkb_symbols "mirror" {
     // Make Control+f left-hand accessible
     key <AC04>{ [h, H, f, F] };
     key <AC05>{ [m, M] };
-    key <AC06>{ [comma, less] };
+    key <AC06>{ [period, greater] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AC07>{ [n, N, BackSpace, BackSpace, 4, 4, 4, 4 ] };
@@ -184,7 +184,7 @@ xkb_symbols "mirror" {
     key <AB06>{ [comma, less, less, less] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
-    key <AB07>{ [b, B, bracketleft, bracketleft, 1, 1, 1, 1] };
+    key <AB07>{ [p, P, bracketleft, bracketleft, 1, 1, 1, 1] };
     key <AB08>{ [apostrophe, quotedbl, bracketright, bracketright, 2, 2, 2, 2] };
     key <AB09>{ [semicolon, colon, greater, greater, 3, 3, 3, 3] };
 
