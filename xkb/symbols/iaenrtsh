@@ -162,8 +162,7 @@ xkb_symbols "mirror" {
         [s, S, NoAction],
         actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5) ]
     };
-    // Make Control+f left-hand accessible
-    key <AC04>{ [h, H, f, F] };
+    key <AC04>{ [h, H, BackSpace, BackSpace] };
     key <AC05>{ [m, M] };
     key <AC06>{ [period, greater] };
 
@@ -194,7 +193,7 @@ xkb_symbols "mirror" {
     include "iaenrtsh(spc_alt)"
     include "level3(lalt_switch)"
     include "level5(lock)"
-    include "ctrl(swapcaps)"
+    include "ctrl(swapcaps_hyper)"
 };
 
 partial alphanumeric_keys
