@@ -25,14 +25,6 @@ backup:
 set_layout: build backup
 	setxkbmap -Ibuild/xkb -rules evdev-local -layout "iaenrtsh" -option -print | xkbcomp -Ibuild/xkb - $$DISPLAY
 
-.PHONY: set_layout_mirror
-set_layout_mirror: build backup
-	setxkbmap -Ibuild/xkb -rules evdev-local -layout "iaenrtsh(mirror)" -option -print | xkbcomp -Ibuild/xkb - $$DISPLAY
-
-.PHONY: set_layout_mirror_j
-set_layout_mirror_j: build backup
-	setxkbmap -Ibuild/xkb -rules evdev-local -layout "iaenrtsh(mirror-j)" -option -print | xkbcomp -Ibuild/xkb - $$DISPLAY
-
 .PHONY: revert_layout
 revert_layout:
 	xkbcomp backup/old-mapping.xkb $$DISPLAY
