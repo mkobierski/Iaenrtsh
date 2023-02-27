@@ -8,7 +8,7 @@ xkb_symbols "iaenrtsh" {
     key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, Escape] };
 
     // Put Control+w on left-hand in third level
-    key <AD02>{ [d, D, w, W ] };
+    key <AD02>{ [d, D ] };
 
     // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
     // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
@@ -34,12 +34,12 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
-    key <AD04>{ [f, F, r, R] };
-    key <AD05>{ [z, Z, t, T] };
+    key <AD04>{ [f, F] };
+    key <AD05>{ [z, Z] };
     key <AD06>{ [q, Q] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
-    key <AD07>{ [b, B, minus, underscore, 7, 7, 7, 7] } ;
+    key <AD07>{ [b, B, underscore, minus, 7, 7, 7, 7] } ;
     key <AD08>{ [u, U, quotedbl, apostrophe, 8, 8, 8, 8] };
     key <AD09>{ [o, O, question, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, equal, plus] };
@@ -47,11 +47,9 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="FOUR_LEVEL";
  //   key <AD11>{type[Group1]="ONE_LEVEL", [ Control_R ] };
 
-    // Make Control+d left-hand accessible
-    key <AC01>{ [r, R, d, D] };
+    key <AC01>{ [r, R] };
 
-    // Make Control+s left-hand accessible
-    replace key <AC02>{ [t, T, s, S ] };
+    replace key <AC02>{ [t, T ] };
     key <AC03>{
         type[Group1] = "THREE_LEVEL",
         [s, S, NoAction],
@@ -59,7 +57,7 @@ xkb_symbols "iaenrtsh" {
     };
     key <AC04>{ [h, H, BackSpace, BackSpace] };
     key <AC05>{ [m, M] };
-    key <AC06>{ [period, greater] };
+    key <AC06>{ [period, space, space, space] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AC07>{ [n, N, BackSpace, BackSpace, 4, 4, 4, 4 ] };
@@ -71,11 +69,11 @@ xkb_symbols "iaenrtsh" {
     key <AC11>{ [j, J, slash, slash] };
 
     key <AB01>{ [x, X] };
-    key <AB02>{ [k, K, c, C] };
+    key <AB02>{ [k, K] };
     key <AB03>{ [c, C, Tab,	ISO_Left_Tab] };
     key <AB04>{ [l, L, Delete] };
     key <AB05>{ [v, V] };
-    key <AB06>{ [comma, less, less, less] };
+    key <AB06>{ [comma, asterisk, plus, plus] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AB07>{ [p, P, bracketleft, bracketleft, 1, 1, 1, 1] };
@@ -96,7 +94,7 @@ xkb_symbols "spc_alt" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
     replace key <RALT> {
         type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
-        [ space, space, underscore, minus, minus, minus, minus, minus]
+        [ space, underscore, minus, minus, minus, minus, minus, minus]
     };
     modifier_map Mod1 { <SPCE> };
 };
