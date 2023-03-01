@@ -8,7 +8,7 @@ xkb_symbols "iaenrtsh" {
     key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, Escape] };
 
     // Put Control+w on left-hand in third level
-    key <AD02>{ [d, D ] };
+    key <AD02>{ [d, D, at, at ] };
 
     // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
     // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
@@ -34,14 +34,14 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
-    key <AD04>{ [f, F] };
-    key <AD05>{ [z, Z] };
+    key <AD04>{ [f, F, numbersign, numbersign] };
+    key <AD05>{ [z, Z, dollar, dollar] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AD06>{ [q, Q, q, Q, minus, minus, minus, minus] };
     key <AD07>{ [b, B, underscore, minus, 7, 7, 7, 7] } ;
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
-    key <AD09>{ [o, O, exclamation, question, 9, 9, 9, 9] };
+    key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
 
     key.type[Group1]="FOUR_LEVEL";
