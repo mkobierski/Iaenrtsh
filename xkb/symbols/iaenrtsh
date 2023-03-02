@@ -5,10 +5,10 @@ xkb_symbols "iaenrtsh" {
     name[Group1]= "English (Iaenrtsh)";
 
     key.type[Group1]="FOUR_LEVEL";
-    key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, Escape] };
+    key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, at, at] };
 
     // Put Control+w on left-hand in third level
-    key <AD02>{ [d, D, at, at ] };
+    key <AD02>{ [d, D, numbersign, numbersign ] };
 
     // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
     // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
@@ -34,22 +34,20 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
-    key <AD04>{ [f, F, numbersign, numbersign] };
-    key <AD05>{ [z, Z, dollar, dollar] };
+    key <AD04>{ [f, F, dollar, dollar] };
+    key <AD05>{ [z, Z, percent, percent] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
-    key <AD06>{ [q, Q, q, Q, minus, minus, minus, minus] };
-    key <AD07>{ [b, B, underscore, minus, 7, 7, 7, 7] } ;
+    key <AD06>{ [q, Q, asciicircum, asciicircum, minus, minus, minus, minus] };
+    key <AD07>{ [b, B, ampersand, ampersand, 7, 7, 7, 7] } ;
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
 
     key.type[Group1]="FOUR_LEVEL";
- //   key <AD11>{type[Group1]="ONE_LEVEL", [ Control_R ] };
+    key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
 
-    key <AC01>{ [r, R] };
-
-    replace key <AC02>{ [t, T ] };
+    replace key <AC02>{ [t, T, underscore, minus ] };
     key <AC03>{
         type[Group1] = "THREE_LEVEL",
         [s, S, NoAction],
@@ -66,7 +64,6 @@ xkb_symbols "iaenrtsh" {
     key <AC10>{ [i, I, semicolon, colon, 0, 0, 0, 0] };
     key <AC11>{ [j, J, quotedbl, apostrophe, equal, equal, equal, equal] };
 
-    key.type[Group1]="FOUR_LEVEL";
     key <AB01>{ [x, X] };
     key <AB02>{ [k, K] };
     key <AB03>{ [c, C, Tab,	ISO_Left_Tab] };
@@ -74,7 +71,7 @@ xkb_symbols "iaenrtsh" {
     key <AB05>{ [v, V] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
-    key <AB06>{ [comma, asterisk, comma, asterisk, asterisk, asterisk, asterisk, asterisk] };
+    key <AB06>{ [comma, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk] };
     key <AB07>{ [p, P, bracketleft, bracketleft, 1, 1, 1, 1] };
     key <AB08>{ [apostrophe, quotedbl, less, less, 2, 2, 2, 2] };
     key <AB09>{ [colon, semicolon, greater, greater, 3, 3, 3, 3] };
