@@ -85,6 +85,15 @@ xkb_symbols "iaenrtsh" {
     include "ctrl(swapcaps_hyper)"
 };
 
+partial alphanumeric_keys
+xkb_symbols "iaenrtsh-l" {
+    include "iaenrtsh"
+
+    // Swap h and l
+    key <AB04>{ [h, H, BackSpace, BackSpace] };
+    key <AC04>{ [l, L, Delete] };
+};
+
 partial modifier_keys
 xkb_symbols "spc_alt" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
