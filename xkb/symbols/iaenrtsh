@@ -7,8 +7,8 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="FOUR_LEVEL";
     key <AD01>{ type[Group1]="THREE_LEVEL", [w, W, at, at] };
 
-    // Put Control+w on left-hand in third level
-    key <AD02>{ [d, D, numbersign, numbersign ] };
+    key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key <AD02>{ [d, D, numbersign, numbersign, minus, minus, minus, minus] };
 
     // To use NumLock (Mod2) instead of Hyper (Mod3) for Level5+.
     // Controls EIGHT_LEVEL_LEVEL_FIVE_LOCK.
@@ -34,6 +34,7 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
+    key.type[Group1]="FOUR_LEVEL";
     key <AD04>{ [f, F, dollar, dollar] };
     key <AD05>{ [z, Z, percent, percent] };
 
@@ -43,15 +44,16 @@ xkb_symbols "iaenrtsh" {
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
+    key <AD11>{ [bracketleft, braceleft, bracketleft, braceleft, minus, minus, minus, minus] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
 
     replace key <AC02>{ [t, T, underscore, minus ] };
     key <AC03>{
-        type[Group1] = "THREE_LEVEL",
-        [s, S, NoAction],
-        actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5) ]
+        type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
+        [s, S, NoAction, NoAction, NoAction, NoAction, NoAction, NoAction],
+        actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5) ]
     };
     key <AC04>{ [h, H, BackSpace, BackSpace] };
     key <AC05>{ [m, M] };
@@ -90,8 +92,10 @@ xkb_symbols "iaenrtsh-l" {
     include "iaenrtsh"
 
     // Swap h and l
-    key <AB04>{ [h, H, BackSpace, BackSpace] };
-    key <AC04>{ [l, L, Delete] };
+
+    key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key <AB04>{ [h, H, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace] };
+    key <AC04>{ [l, L, Delete, Delete, Delete, Delete, Delete, Delete] };
 };
 
 partial modifier_keys
