@@ -34,8 +34,9 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
+    key <AD04>{ [f, F, dollar, dollar, period, period, period, period ] };
+
     key.type[Group1]="FOUR_LEVEL";
-    key <AD04>{ [f, F, dollar, dollar] };
     key <AD05>{ [z, Z, percent, percent] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
@@ -44,7 +45,7 @@ xkb_symbols "iaenrtsh" {
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
-    key <AD11>{ [bracketleft, braceleft, bracketleft, braceleft, minus, minus, minus, minus] };
+    key <AD11>{ [comma, comma, bracketright, bracketright] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
@@ -56,7 +57,7 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5) ]
     };
     key <AC04>{ [h, H, BackSpace, BackSpace] };
-    key <AC05>{ [m, M] };
+    key <AC05>{ [m, M, Tab, ISO_Left_Tab] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AC06>{ [period, space, space, space, period, period, period, period ] };
@@ -67,8 +68,8 @@ xkb_symbols "iaenrtsh" {
     key <AC11>{ [j, J, quotedbl, apostrophe, equal, equal, equal, equal] };
 
     key <AB01>{ [x, X] };
-    key <AB02>{ [k, K] };
-    key <AB03>{ [c, C, Tab,	ISO_Left_Tab] };
+    key <AB02>{ [k, K, braceleft, braceleft] };
+    key <AB03>{ [c, C, braceright, braceright] };
     key <AB04>{ [l, L, Delete] };
     key <AB05>{ [v, V] };
 
@@ -98,12 +99,33 @@ xkb_symbols "iaenrtsh-l" {
     key <AC04>{ [l, L, Delete, Delete, Delete, Delete, Delete, Delete] };
 };
 
-partial modifier_keys
+partial alphanumeric_keys
+xkb_symbols "iaenrtsh-l-bkspc" {
+    include "iaenrtsh(iaenrtsh-l)"
+    include "iaenrtsh(spc_alt_nominus)"
+
+    key <AC06>{ [BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace] };
+    key <AC07>{ [n, N, minus, minus, 4, 4, 4, 4 ] };
+    key <AB06>{ [period, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk] };
+    key <AB10>{ [slash, question, minus, minus] };
+};
+
+partial alphanumeric_keys
 xkb_symbols "spc_alt" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
     replace key <RALT> {
         type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
         [ space, underscore, minus, minus, space, space, space, space ]
+    };
+    modifier_map Mod1 { <SPCE> };
+};
+
+partial modifier_keys
+xkb_symbols "spc_alt_nominus" {
+    replace key <SPCE> { [ Alt_R, Meta_R ] };
+    replace key <RALT> {
+        type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
+        [ space, underscore, space, space, space, space, space, space ]
     };
     modifier_map Mod1 { <SPCE> };
 };
