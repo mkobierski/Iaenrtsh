@@ -45,7 +45,7 @@ xkb_symbols "iaenrtsh" {
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
-    key <AD11>{ [comma, comma, bracketright, bracketright] };
+    key <AD11>{ [minus, underscore, minus, underscore] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
@@ -105,9 +105,8 @@ xkb_symbols "iaenrtsh-l-bkspc" {
     include "iaenrtsh(spc_alt_nominus)"
 
     key <AC06>{ [BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace] };
-    key <AC07>{ [n, N, minus, minus, 4, 4, 4, 4 ] };
-    key <AB06>{ [period, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk] };
-    key <AB10>{ [slash, question, minus, minus] };
+    key <AC07>{ [n, N, asterisk, asterisk, 4, 4, 4, 4 ] };
+    key <AB06>{ [period, comma, period, comma, asterisk, asterisk, asterisk, asterisk] };
 };
 
 partial alphanumeric_keys
@@ -125,7 +124,7 @@ xkb_symbols "spc_alt_nominus" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
     replace key <RALT> {
         type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
-        [ space, underscore, space, space, space, space, space, space ]
+        [ space, space, space, space, space, space, space, space ]
     };
     modifier_map Mod1 { <SPCE> };
 };
