@@ -104,8 +104,11 @@ xkb_symbols "iaenrtsh-l-bkspc" {
     include "iaenrtsh(iaenrtsh-l)"
     include "iaenrtsh(spc_alt_nominus)"
 
+    key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, minus] };
+
     key <AC06>{ [BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace] };
     key <AC07>{ [n, N, asterisk, asterisk, 4, 4, 4, 4 ] };
+    key <AB01>{ type[Group1]="THREE_LEVEL", [x, X, Escape] };
     key <AB06>{ [period, comma, period, comma, asterisk, asterisk, asterisk, asterisk] };
 };
 
