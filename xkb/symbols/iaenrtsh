@@ -106,10 +106,11 @@ xkb_symbols "iaenrtsh-l-bkspc" {
 
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, minus] };
 
-    key <AC06>{ [BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace, BackSpace] };
+    key <AD07>{ [period, comma, period, comma, 7, 7, 7, 7] } ;
+    key <AC06>{ [b, B, ampersand, ampersand, BackSpace, BackSpace, BackSpace, BackSpace] };
     key <AC07>{ [n, N, asterisk, asterisk, 4, 4, 4, 4 ] };
     key <AB01>{ type[Group1]="THREE_LEVEL", [x, X, Escape] };
-    key <AB06>{ [period, comma, period, comma, asterisk, asterisk, asterisk, asterisk] };
+    key <AB06>{ [BackSpace,BackSpace, BackSpace, BackSpace,  asterisk, asterisk, asterisk, asterisk] };
 };
 
 partial alphanumeric_keys
