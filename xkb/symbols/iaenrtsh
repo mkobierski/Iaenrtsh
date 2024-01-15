@@ -114,6 +114,13 @@ xkb_symbols "iaenrtsh-l-bkspc" {
 };
 
 partial alphanumeric_keys
+xkb_symbols "iaenrtsh-l-bkspc-w" {
+    include "iaenrtsh(iaenrtsh-l-bkspc)"
+    key <AB01>{ type[Group1]="THREE_LEVEL", [w, W, Escape] };
+    key <AD01>{ type[Group1]="THREE_LEVEL", [x, X, at, at] };
+};
+
+partial alphanumeric_keys
 xkb_symbols "spc_alt" {
     replace key <SPCE> { [ Alt_R, Meta_R ] };
     replace key <RALT> {
