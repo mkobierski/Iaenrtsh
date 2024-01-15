@@ -45,7 +45,7 @@ xkb_symbols "iaenrtsh" {
     key <AD08>{ [u, U, equal, plus, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
-    key <AD11>{ [minus, underscore, minus, underscore] };
+    key <AD11>{ [minus, underscore, grave, asciitilde] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
