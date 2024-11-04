@@ -71,7 +71,7 @@ xkb_symbols "iaenrtsh" {
     key <AB02>{ [k, K, braceleft, braceleft] };
     key <AB03>{ [c, C, braceright, braceright] };
     key <AB04>{ [l, L, Delete] };
-    key <AB05>{ [v, V] };
+    key <AB05>{ [v, V, space] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AB06>{ [comma, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk] };
