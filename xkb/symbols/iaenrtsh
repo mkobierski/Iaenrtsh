@@ -42,15 +42,15 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AD06>{ [q, Q, asciicircum, asciicircum, minus, minus, minus, minus] };
     key <AD07>{ [b, B, ampersand, ampersand, 7, 7, 7, 7] } ;
-    key <AD08>{ [u, U, equal, dead_diaeresis, 8, 8, 8, 8] };
-    key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
+    key <AD08>{ [u, U, equal, dead_cedilla, 8, 8, 8, 8] };
+    key <AD09>{ [o, O, exclam, dead_circumflex, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
     key <AD11>{ [minus, underscore, apostrophe, grave] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
 
-    replace key <AC02>{ [t, T, underscore, minus ] };
+    replace key <AC02>{ [t, T, underscore, dead_diaeresis] };
     key <AC03>{
         type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK",
         [s, S, NoAction, NoAction, NoAction, NoAction, NoAction, NoAction],
@@ -62,14 +62,14 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AC06>{ [period, space, space, space, period, period, period, period ] };
     key <AC07>{ [n, N, BackSpace, BackSpace, 4, 4, 4, 4 ] };
-    key <AC08>{ [e, E, parenleft, dead_acute, 5, 5, 5, 5 ] };
-    key <AC09>{ [a, A, parenright, dead_grave, 6, 6, 6, 6 ] };
+    key <AC08>{ [e, E, parenleft, parenleft, 5, 5, 5, 5 ] };
+    key <AC09>{ [a, A, parenright, parenright, 6, 6, 6, 6 ] };
     key <AC10>{ [i, I, semicolon, colon, 0, 0, 0, 0] };
     key <AC11>{ [j, J, quotedbl, asciitilde, equal, equal, equal, equal] };
 
     key <AB01>{ [x, X] };
-    key <AB02>{ [k, K, braceleft, braceleft] };
-    key <AB03>{ [c, C, braceright, braceright] };
+    key <AB02>{ [k, K, braceleft, dead_acute] };
+    key <AB03>{ [c, C, braceright, dead_grave] };
     key <AB04>{ [l, L, Delete] };
     key <AB05>{ [v, V, space] };
 
