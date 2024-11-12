@@ -45,7 +45,7 @@ xkb_symbols "iaenrtsh" {
     key <AD08>{ [u, U, equal, dead_diaeresis, 8, 8, 8, 8] };
     key <AD09>{ [o, O, exclam, question, 9, 9, 9, 9] };
     key <AD10>{ [y, Y, plus, plus, plus, plus, plus, plus] };
-    key <AD11>{ [minus, underscore, grave, asciitilde] };
+    key <AD11>{ [minus, underscore, apostrophe, grave] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, Escape] };
@@ -65,7 +65,7 @@ xkb_symbols "iaenrtsh" {
     key <AC08>{ [e, E, parenleft, dead_acute, 5, 5, 5, 5 ] };
     key <AC09>{ [a, A, parenright, dead_grave, 6, 6, 6, 6 ] };
     key <AC10>{ [i, I, semicolon, colon, 0, 0, 0, 0] };
-    key <AC11>{ [j, J, quotedbl, apostrophe, equal, equal, equal, equal] };
+    key <AC11>{ [j, J, quotedbl, asciitilde, equal, equal, equal, equal] };
 
     key <AB01>{ [x, X] };
     key <AB02>{ [k, K, braceleft, braceleft] };
