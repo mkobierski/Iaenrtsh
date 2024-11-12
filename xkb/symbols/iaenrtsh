@@ -76,11 +76,11 @@ xkb_symbols "iaenrtsh" {
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AB06>{ [comma, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk, asterisk] };
     key <AB07>{ [p, P, bracketleft, bracketleft, 1, 1, 1, 1] };
-    key <AB08>{ [apostrophe, quotedbl, less, dead_circumflex, 2, 2, 2, 2] };
-    key <AB09>{ [colon, semicolon, greater, dead_cedilla, 3, 3, 3, 3] };
+    key <AB08>{ [apostrophe, quotedbl, less, less, 2, 2, 2, 2] };
+    key <AB09>{ [colon, semicolon, greater, greater, 3, 3, 3, 3] };
 
     key.type[Group1]="FOUR_LEVEL";
-    key <AB10>{ [slash, question, bracketright, bracketright] };
+    key <AB10>{ [slash, question, bracketright, slash] };
 
     include "iaenrtsh(spc_alt)"
     include "level3(lalt_switch)"
@@ -104,7 +104,7 @@ xkb_symbols "iaenrtsh-l-bkspc" {
     include "iaenrtsh(iaenrtsh-l)"
     include "iaenrtsh(spc_alt_nominus)"
 
-    key <AC01>{ type[Group1]="THREE_LEVEL", [r, R, minus] };
+    key <AC01>{ type[Group1]="FOUR_LEVEL", [r, R, minus, equal] };
 
     key <AD07>{ [period, comma, period, comma, 7, 7, 7, 7] } ;
     key <AC06>{ [b, B, ampersand, ampersand, BackSpace, BackSpace, BackSpace, BackSpace] };
