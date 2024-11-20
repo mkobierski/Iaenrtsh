@@ -34,7 +34,7 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), SetMods(modifiers=NumLock)]
     };
 
-    key <AD04>{ [f, F, Escape, Escape, period, period, period, period ] };
+    key <AD04>{ [f, F, comma, comma, period, period, period, period ] };
 
     key.type[Group1]="FOUR_LEVEL";
     key <AD05>{ [z, Z, percent, percent] };
@@ -57,7 +57,7 @@ xkb_symbols "iaenrtsh" {
         actions[Group1] = [ NoAction(), NoAction(), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5), Redirect(key=<RTRN>, clearmods=Mod5) ]
     };
     key <AC04>{ [h, H, BackSpace, BackSpace] };
-    key <AC05>{ [m, M, Tab, ISO_Left_Tab] };
+    key <AC05>{ [m, M, Escape, Escape] };
 
     key.type[Group1]="EIGHT_LEVEL_LEVEL_FIVE_LOCK";
     key <AC06>{ [period, space, space, space, period, period, period, period ] };
